@@ -40,16 +40,16 @@ PACKAGES="$PACKAGES openssh-sftp-server"
 # 静态文件服务器dufs(推荐)
 # PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
 
-# ======== 注释掉的Docker插件 ========
+# ======== 取消注释的Docker插件 ========
 # 判断是否需要编译 Docker 插件
-# if [ "$INCLUDE_DOCKER" = "yes" ]; then
-#     PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn"
-#     echo "✅ 已选择docker : luci-i18n-dockerman-zh-cn"
-# fi
+if [ "$INCLUDE_DOCKER" = "yes" ]; then
+    PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn"
+    echo "✅ 已选择docker : luci-i18n-dockerman-zh-cn"
+fi
 
-# ======== 注释掉的斐讯N1 无线驱动 ========
-# PACKAGES="$PACKAGES kmod-brcmfmac wpad-basic-mbedtls iw iwinfo"
-# PACKAGES="$PACKAGES perlbase-base perlbase-file perlbase-time perlbase-utf8 perlbase-xsloader"
+# ======== 取消注释的斐讯N1 无线驱动 ========
+PACKAGES="$PACKAGES kmod-brcmfmac wpad-basic-mbedtls iw iwinfo"
+PACKAGES="$PACKAGES perlbase-base perlbase-file perlbase-time perlbase-utf8 perlbase-xsloader"
 
 # ======== 关键修正：清空CUSTOM_PACKAGES ========
 # 因为第三方仓库已注释，需要移除所有第三方包引用
